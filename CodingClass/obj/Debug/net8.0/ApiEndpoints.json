@@ -2,8 +2,8 @@
   {
     "ContainingType": "CodingClass.Controllers.StudentController",
     "Method": "AddStudent",
-    "RelativePath": "api/Student/api/student",
-    "HttpMethod": "GET",
+    "RelativePath": "api/Student",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -18,7 +18,7 @@
   {
     "ContainingType": "CodingClass.Controllers.StudentController",
     "Method": "ListStudents",
-    "RelativePath": "api/Student/api/students",
+    "RelativePath": "api/Student",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "CodingClass.Controllers.StudentController",
     "Method": "AssignCourse",
-    "RelativePath": "api/Student/api/students/{id}/courses",
+    "RelativePath": "api/Student/{id}/courses",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

@@ -136,3 +136,12 @@ C:\Users\thewa\Downloads\CodingClass\CodingClass\obj\Debug\net8.0\CodingClass.pd
 C:\Users\thewa\Downloads\CodingClass\CodingClass\obj\Debug\net8.0\CodingClass.genruntimeconfig.cache
 C:\Users\thewa\Downloads\CodingClass\CodingClass\obj\Debug\net8.0\ref\CodingClass.dll
 C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\CodingClass.staticwebassets.runtime.json
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\thewa\Downloads\CodingClass\CodingClass\obj\Debug\net8.0\CodingClass.sourcelink.json

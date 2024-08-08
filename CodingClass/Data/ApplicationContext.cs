@@ -27,7 +27,23 @@ namespace CodingClass.Data
                 .HasOne(sc => sc.Course)
                 .WithMany(c => c.StudentCourse)
                 .HasForeignKey(sc => sc.CourseId);
-            
+
+            modelBuilder.Entity<Course>().HasData(
+                new Course { Id = 1, CourseName = "Math" },
+                new Course { Id = 2, CourseName = "Science" }
+            );
+
+            modelBuilder.Entity<Student>().HasData(
+                new Student { Id = 1, Name = "John", Email = "john@gmail.com", Phone = "123" },
+                new Student { Id = 2, Name = "Jane", Email = "jane@gmail.com", Phone = "456" }
+            );
+
+            modelBuilder.Entity<StudentCourse>().HasData(
+                new StudentCourse { StudentId = 1, CourseId = 1 },
+                new StudentCourse { StudentId = 1, CourseId = 2 },
+                new StudentCourse { StudentId = 2, CourseId = 2 }
+            );
+
         }
     }
 }

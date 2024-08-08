@@ -1,17 +1,8 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
-using CodingClass.Data;
+﻿using CodingClass.Data;
 using CodingClass.Entity;
 
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CodingClass.Controllers;
 
@@ -19,39 +10,52 @@ namespace CodingClass.Controllers;
 [ApiController]
 public class StudentController : ControllerBase
 {
-    public readonly ApplicationContext _context;
+    private readonly ApplicationContext _context;
+
     public StudentController(ApplicationContext context)
     {
         _context = context;
     }
-    [HttpGet("api/student")]
+
+    [HttpPost]
     public async Task<IActionResult> AddStudent([FromBody] Student student)
     {
+        if (student == null)
+        {
+            return BadRequest("Student cannot be null");
+        }
+
         _context.Students.Add(student);
         await _context.SaveChangesAsync();
-        return Ok(student);
+
+        // Return 201 Created status code with the student object
+        return CreatedAtAction(nameof(AddStudent), new { id = student.Id }, student);
     }
 
-
-    [HttpPost("api/students/{id}/courses")]
+    [HttpPost("{id}/courses")]
     public async Task<IActionResult> AssignCourse(int id, [FromBody] List<int> courseIds)
     {
-
-        var student = await _context.Students.FindAsync(id);
+        var student = await _context.Students.Include(s => s.StudentCourse).FirstOrDefaultAsync(s => s.Id == id);
         if (student == null)
-            return NotFound();
+        {
+            return NotFound("Student not found");
+        }
+
         foreach (var courseId in courseIds)
         {
             var course = await _context.Courses.FindAsync(courseId);
             if (course == null)
-                continue;
+            {
+                return NotFound($"Course with ID {courseId} not found");
+            }
             student.StudentCourse.Add(new StudentCourse { StudentId = student.Id, CourseId = course.Id });
         }
+
         await _context.SaveChangesAsync();
         return Ok(student);
     }
 
-    [HttpGet("api/students")]
+    [HttpGet]
     public async Task<IActionResult> ListStudents()
     {
         var students = await _context.Students
@@ -62,12 +66,15 @@ public class StudentController : ControllerBase
                 s.Name,
                 s.Phone,
                 s.Email,
-                Course = string.Join(",", s.StudentCourse.Select(sc => sc.Course.CourseName))
+                Courses = string.Join(",", s.StudentCourse.Select(sc => sc.Course.CourseName))
             })
             .ToListAsync();
+
+        if (students == null || !students.Any())
+        {
+            return NotFound("No students found");
+        }
+
         return Ok(students);
     }
-   
-
 }
-
