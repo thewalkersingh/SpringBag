@@ -28,6 +28,7 @@ public class StudentController : ControllerBase
         _context.Students.Add(student);
         await _context.SaveChangesAsync();
 
+        // Return 201 Created status code with the student object
         return CreatedAtAction(nameof(AddStudent), new { id = student.Id }, student);
     }
 
