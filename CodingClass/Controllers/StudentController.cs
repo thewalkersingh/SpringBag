@@ -11,10 +11,11 @@ namespace CodingClass.Controllers;
 public class StudentController : ControllerBase
 {
     private readonly ApplicationContext _context;
-
-    public StudentController(ApplicationContext context)
+    private readonly ILogger<StudentController> _logger;
+    public StudentController(ApplicationContext context, ILogger<StudentController> logger)
     {
         _context = context;
+        _logger = logger;
     }
 
     [HttpPost]
@@ -24,12 +25,23 @@ public class StudentController : ControllerBase
         {
             return BadRequest("Student cannot be null");
         }
-
-        _context.Students.Add(student);
-        await _context.SaveChangesAsync();
-
-        // Return 201 Created status code with the student object
-        return CreatedAtAction(nameof(AddStudent), new { id = student.Id }, student);
+        if (string.IsNullOrWhiteSpace(student.Email))
+        {
+            // it's a demo if email is not provided
+            return BadRequest("Student cannot be null");
+        }
+        // demo of try catch, we can use try catch in other end point also
+        try
+        {
+            _context.Students.Add(student);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(AddStudent), new { id = student.Id }, student);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while adding a student.");
+            return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing your request.");
+        }
     }
 
     [HttpPost("{id}/courses")]
@@ -38,7 +50,7 @@ public class StudentController : ControllerBase
         var student = await _context.Students.Include(s => s.StudentCourse).FirstOrDefaultAsync(s => s.Id == id);
         if (student == null)
         {
-            return NotFound("Student not found");
+            return NotFound($"Student with ID {id} not found.");
         }
 
         foreach (var courseId in courseIds)
