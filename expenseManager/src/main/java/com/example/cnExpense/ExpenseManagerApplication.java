@@ -8,6 +8,7 @@ public class ExpenseManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ExpenseManagerApplication.class, args);
+		System.out.println("Project Started");
 	}
-
+	
 }
