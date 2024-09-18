@@ -42,13 +42,13 @@ mvn spring-boot:run
 Prerequisites
 Java JDK (version 11 or higher)
 Maven (for dependency management)
-Database (MySQL, PostgreSQL, or H2 as needed for each project)
+Database (MySQL or H2 as needed for each project)
 API Documentation
 For projects with REST APIs, Swagger or Postman collections can be used to test the endpoints. Swagger documentation is available at /swagger-ui.html after running the application.
 
-Contributions
+### Contributions
 Feel free to fork this repository, suggest new features, or use the projects for educational purposes. Contributions are welcome!
 
-Contact
-If you have any questions, suggestions, or want to collaborate, feel free to reach me at [your email].
+### Contact
+If you have any questions, suggestions, or want to collaborate, feel free to reach me at dev.walkersingh@gmail.com.
 
