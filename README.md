@@ -32,11 +32,11 @@ Clone this repository:
 git clone https://github.com/yourusername/spring-boot-projects.git
 Navigate to the project folder:
 
-cd ProjectFolder
-Install dependencies and build the project using Maven:
+-cd ProjectFolder
+-Install dependencies and build the project using Maven:
 
-mvn clean install
-Run the application:
+-mvn clean install
+-Run the application:
 
 mvn spring-boot:run
 Prerequisites
