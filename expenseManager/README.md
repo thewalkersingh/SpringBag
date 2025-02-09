@@ -1,3 +1,5 @@
 # Expense Manager App
-
-[README.md](README.md)
+### All your expenses at one Place
+- Add all expenses
+- Mange expenses
+- Plan the month
