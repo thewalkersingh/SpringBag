@@ -1,4 +1,4 @@
-package com.example.cnExpense.entities;
+package com.example.expense.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

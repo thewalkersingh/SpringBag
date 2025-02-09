@@ -1,5 +1,5 @@
-package com.example.cnExpense.DAL;
-import com.example.cnExpense.entities.User;
+package com.example.expense.DAL;
+import com.example.expense.entities.User;
 
 import java.util.List;
 

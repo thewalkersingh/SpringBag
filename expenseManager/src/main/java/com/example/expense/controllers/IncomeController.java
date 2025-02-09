@@ -1,7 +1,7 @@
-package com.example.cnExpense.controllers;
-import com.example.cnExpense.entities.Income;
-import com.example.cnExpense.entities.User;
-import com.example.cnExpense.service.IncomeService;
+package com.example.expense.controllers;
+import com.example.expense.entities.Income;
+import com.example.expense.entities.User;
+import com.example.expense.service.IncomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

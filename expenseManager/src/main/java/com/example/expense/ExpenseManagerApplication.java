@@ -1,4 +1,4 @@
-package com.example.cnExpense;
+package com.example.expense;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

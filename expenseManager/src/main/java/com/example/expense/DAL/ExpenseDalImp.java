@@ -1,7 +1,7 @@
-package com.example.cnExpense.DAL;
-import com.example.cnExpense.entities.Expense;
-import com.example.cnExpense.entities.ExpenseType;
-import com.example.cnExpense.entities.Income;
+package com.example.expense.DAL;
+import com.example.expense.entities.Expense;
+import com.example.expense.entities.ExpenseType;
+import com.example.expense.entities.Income;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
-package com.example.cnExpense.service;
-import com.example.cnExpense.DAL.UserDal;
-import com.example.cnExpense.entities.User;
+package com.example.expense.service;
+import com.example.expense.DAL.UserDal;
+import com.example.expense.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

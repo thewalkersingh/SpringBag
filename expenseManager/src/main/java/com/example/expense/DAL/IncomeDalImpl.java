@@ -1,8 +1,8 @@
-package com.example.cnExpense.DAL;
-import com.example.cnExpense.entities.Income;
-import com.example.cnExpense.entities.IncomeType;
-import com.example.cnExpense.entities.User;
-import com.example.cnExpense.service.UserService;
+package com.example.expense.DAL;
+import com.example.expense.entities.Income;
+import com.example.expense.entities.IncomeType;
+import com.example.expense.entities.User;
+import com.example.expense.service.UserService;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

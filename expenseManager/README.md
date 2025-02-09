@@ -1,3 +1,3 @@
-# springMCV
-Spring MCV demo repo
-and more!
+# Expense Manager App
+
+[README.md](README.md)
